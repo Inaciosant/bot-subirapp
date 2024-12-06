@@ -1,0 +1,24 @@
+# Ambiente virtual
+venv/
+__pycache__/
+
+# Arquivos de configuração do VS Code
+.vscode/
+
+# Arquivos de dependências do Python
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos de log
+*.log
+
+# Arquivos de banco de dados
+*.sqlite3
+
+# Dependências do Node (caso você esteja usando o Expo ou EAS)
+node_modules/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
