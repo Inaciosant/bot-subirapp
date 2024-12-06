@@ -1,8 +1,13 @@
 from flask import Flask, request, jsonify
 import subprocess
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Permite requisições de qualquer origem
+@app.route('/')
+def home():
+    return "Olá, Mundo!"  # Ou qualquer outra resposta que você queira retornar.
 
 @app.route('/start-bot', methods=['POST'])
 def start_bot():
