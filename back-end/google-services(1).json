@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "558651948637",
+    "project_id": "corretor-forte-lote",
+    "storage_bucket": "corretor-forte-lote.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558651948637:android:a5c3a7d66969fcb88497b4",
+        "android_client_info": {
+          "package_name": "com.ibsystemlote.corretorfortelote"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr4FKWcgfA6c9QFOv5ECuPeDgBQTDwstg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
