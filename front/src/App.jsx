@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import { Container, Form, Button, Spinner } from 'react-bootstrap';
 import axios from 'axios';
+import { ToastContainer, toast } from "react-toastify";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { SiFreelancer } from "react-icons/si";
+import { SiFirebase } from "react-icons/si";
+import { MdImageSearch, MdDriveFileRenameOutline } from "react-icons/md";
+import { BiCodeCurly,BiSolidPackage  } from "react-icons/bi";
 const App = () => {
   const [projectName, setProjectName] = useState('');
   const [systemUrl, setSystemUrl] = useState('');
@@ -9,22 +16,27 @@ const App = () => {
   const [googleJson, setGoogleJson] = useState(null);
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
-
+  const [showToast, setShowToast] = useState(false);
+  // Define o tipo do Toast
   const handleStartBot = async () => {
     // Verificação se o nome do projeto tem mais de 30 caracteres
     if (projectName.length > 30) {
-      setStatus('Erro: O nome do projeto deve ter no máximo 30 caracteres.');
+      toast.error("Erro: O nome do projeto deve ter no máximo 30 caracteres.");
       return;
     }
 
     // Verificação para garantir que o logo e o arquivo JSON sejam enviados
     if (!logo || !googleJson) {
-      setStatus('Erro: É necessário fazer upload do logo e do arquivo google.json.');
+      toast.error("Erro: É necessário fazer upload do logo e do arquivo google.json.");    
       return;
     }
 
     try {
-      setStatus('O bot está rodando...');
+      toast.info("O bot está rodando...", {
+        icon: (
+          <div className="spinner-border spinner-border-sm text-primary" role="status" />
+        ),
+      });
       setLoading(true);
       
       console.log("Enviando dados:", {
@@ -49,8 +61,10 @@ const App = () => {
         },
       });
 
-      setStatus('Foi criado o app na EXPO');
+      toast.success("Bot rodou com sucesso!");
+     
     } catch (error) {
+      toast.error("Erro ao rodar o bot.");
       setStatus('Erro ao iniciar o bot.');
       console.error(error); // Log para verificar o erro
     } finally {
@@ -59,16 +73,33 @@ const App = () => {
   };
 
   return (
-    
+    <div className=' bg-dark text-white'>
     <Container
-      className="text-center d-flex justify-content-center align-items-center"
+      className="text-center d-flex justify-content-center align-items-center  " 
       style={{ minHeight: '100vh' }}
     >
+    
       <div>
-        <h1>Subir App</h1>
-        <Form>
-          <Form.Group className="mb-3">
-            <Form.Label>Nome do Projeto (até 30 caracteres)</Form.Label>
+      <ToastContainer
+        position="top-right"
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored" // Altere para "light" ou "dark" se necessário
+      />
+       
+        <Form className='card' style={{padding:"20px"}}>
+        <div  style={{ display: 'flex', alignItems: 'center', gap: '10px', marginLeft:"120px" }}>
+  <h1 className="mb-4 text-center" style={{color:"#cf4647"}}>AppLancer</h1>
+  <SiFreelancer size={50} style={{color:"#cf4647"}} />
+</div>
+        
+          <Form.Group className="mb-3 mt-4" style={{minWidth:"500px"}}>
+            <Form.Label>Nome do Projeto (até 30 caracteres) <MdDriveFileRenameOutline size={30} style={{color:"#cf4647"}} /></Form.Label>
             <Form.Control
               type="text"
               placeholder="Digite o nome do projeto"
@@ -79,7 +110,7 @@ const App = () => {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>URL do Sistema</Form.Label>
+            <Form.Label>URL do Sistema <BiCodeCurly  size={30} style={{color:"#cf4647"}}/></Form.Label>
             <Form.Control
               type="url"
               placeholder="Digite a URL do sistema do cliente"
@@ -89,7 +120,7 @@ const App = () => {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Name pro App (Pacote)</Form.Label>
+            <Form.Label>Name pro App (Pacote)<BiSolidPackage size={30} style={{color:"#cf4647"}} /></Form.Label>
             <Form.Control
               type="text"
               placeholder="Ex: com.ibsystemLote.clienteTeste"
@@ -99,7 +130,7 @@ const App = () => {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Logo do App</Form.Label>
+            <Form.Label>Logo do App <MdImageSearch size={30} style={{color:"#cf4647"}} /></Form.Label>
             <Form.Control
               type="file"
               accept="image/*"
@@ -108,7 +139,7 @@ const App = () => {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>google-services.json (Firebase)</Form.Label>
+            <Form.Label>google-services.json (Firebase) <SiFirebase size={30} style={{color:"#cf4647"}} /></Form.Label>
             <Form.Control
               type="file"
               accept=".json"
@@ -125,7 +156,7 @@ const App = () => {
             />
           </Form.Group>
 
-          <Button variant="primary" onClick={handleStartBot} disabled={loading}>
+          <Button variant="danger" onClick={handleStartBot} disabled={loading}>
             {loading ? (
               <>
                 <Spinner animation="border" size="sm" role="status" aria-hidden="true" />
@@ -139,10 +170,11 @@ const App = () => {
         <p>{status}</p>
       </div>
 
+
       
       
     </Container>
-   
+   </div>
   );
 };
 

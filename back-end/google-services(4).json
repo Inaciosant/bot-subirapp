@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "632508125776",
+    "project_id": "bmx-imobi-cliente",
+    "storage_bucket": "bmx-imobi-cliente.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632508125776:android:f6d8c3d568a32747bb7755",
+        "android_client_info": {
+          "package_name": "com.ibsystemlote.bmxcliente"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFvLDZUJbWGDKBR3UD-btgBnlNocriHZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
