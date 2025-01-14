@@ -61,10 +61,10 @@ def criar_projeto_expo(project_name, uri, bundle_identifier, google_services_pat
             "expo": "~52.0.9",
             "expo-status-bar": "~2.0.0",
             "react": "18.3.1",
-            "react-native": "0.76.5",
+            "react-native": "0.76.6",
             "react-native-webview": "13.12.5",
             "expo-notifications": "~0.29.6",
-            "expo-device": "7.0.1",
+            "expo-device": "7.0.2",
             "expo-constants": "~17.0.3"
         }
 

@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "770446140972",
-    "project_id": "leidenscli",
-    "storage_bucket": "leidenscli.firebasestorage.app"
+    "project_number": "696476196605",
+    "project_id": "dualloteamentoscli",
+    "storage_bucket": "dualloteamentoscli.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:770446140972:android:66b06e015a82f117e71389",
+        "mobilesdk_app_id": "1:696476196605:android:29f837e17e7b85a45d6894",
         "android_client_info": {
-          "package_name": "com.ibsystemlote.leidenscli"
+          "package_name": "com.ibsytemlote.dualCliente"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAhgbo6XAdiBJCUR10tGAJmAppie_TZUV8"
+          "current_key": "AIzaSyDycIMJ6ETBc2pmWksjIkFnPYjtUCM7t6A"
         }
       ],
       "services": {
