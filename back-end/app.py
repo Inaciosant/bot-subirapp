@@ -58,14 +58,14 @@ def criar_projeto_expo(project_name, uri, bundle_identifier, google_services_pat
 
         # Atualiza as dependências no package.json
         novas_dependencias = {
-            "expo": "~52.0.9",
-            "expo-status-bar": "~2.0.0",
-            "react": "18.3.1",
-            "react-native": "0.76.5",
-            "react-native-webview": "13.12.5",
-            "expo-notifications": "~0.29.6",
-            "expo-device": "7.0.1",
-            "expo-constants": "~17.0.3"
+            "expo": "~53.0.0",
+             "expo-status-bar": "~2.2.3",
+    "react": "19.0.0",
+    "react-native": "0.79.2",
+    "react-native-webview": "13.13.5",
+    "expo-notifications": "~0.31.1",
+    "expo-device": "~7.1.4",
+    "expo-constants": "~17.1.5"
         }
 
         with open(package_json_path, "r") as f:
